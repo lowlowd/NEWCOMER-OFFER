@@ -1,228 +1,95 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
+import Button from '~/components/ui/Button.astro';
 
+// Metadata for the page
 const metadata = {
-  title: 'About us',
+  title: 'About KOHO',
+  description: "Canada's leading digital banking platform, helping Canadians spend, save, and earn smarter.",
 };
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+<PageLayout metadata={metadata}>
+  
+  <div class="max-w-7xl mx-auto px-4 py-16 text-center bg-white dark:bg-slate-900">
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6 font-heading text-blue-600 dark:text-blue-400">Why Koho Referral Codes?</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      We have the best referral codes for Koho that are tested to maximize your value and your Koho Account. Our verified codes ensure you get the highest possible bonus when signing up for KOHO's innovative banking platform.
+    </p>
+  </div>
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
-    </Fragment>
+  <!-- Our Mission -->
+  <div class="bg-gray-50 dark:bg-slate-800">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="text-center">
+        <h3 class="text-3xl font-bold tracking-tight mb-4 font-heading text-blue-600 dark:text-blue-400">Our Mission</h3>
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          At Koho Referral Codes, our mission is simple: help Canadians discover and maximize the benefits of modern digital banking. We believe everyone deserves access to financial tools that make managing money easier, more rewarding, and completely transparent.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
-    </Fragment>
-  </Hero>
+  <!-- Why Trust Our Codes?, What Makes KOHO Special?, Our Commitment - Combined Gray Section -->
+  <div class="bg-gray-50 dark:bg-slate-800">
+    <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+      
+      <!-- Why Trust Our Codes? -->
+      <div class="text-center">
+        <h3 class="text-3xl font-bold tracking-tight mb-4 font-heading text-blue-600 dark:text-blue-400">Why Trust Our Codes?</h3>
+        <div class="text-lg text-muted-foreground leading-relaxed space-y-4">
+          <p>
+            We personally test and verify every referral code before sharing it with you. Our featured code <strong>C4MNILZARC</strong> is guaranteed to work and provide you with the maximum available bonus when you sign up for KOHO.
+          </p>
+          <p>
+            Unlike other sites that may share outdated or expired codes, we maintain active KOHO accounts ourselves and regularly verify that our codes deliver the promised bonuses. When you use our referral code, you can trust that you're getting the best deal available.
+          </p>
+        </div>
+      </div>
 
-  <!-- Stats Widget ****************** -->
+      <!-- What Makes KOHO Special? -->
+      <div class="text-center">
+        <h3 class="text-3xl font-bold tracking-tight mb-4 font-heading text-blue-600 dark:text-blue-400">What Makes KOHO Special?</h3>
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          KOHO represents a fundamental shift in Canadian banking. While traditional banks profit from fees and penalties, KOHO is built around helping you succeed financially. With features like instant cashback, automatic savings, real-time budgeting tools, and credit building—all without monthly fees—KOHO puts your financial wellness first.
+        </p>
+      </div>
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
+      <!-- Our Commitment to You -->
+      <div class="text-center">
+        <h3 class="text-3xl font-bold tracking-tight mb-4 font-heading text-blue-600 dark:text-blue-400">Our Commitment to You</h3>
+        <div class="text-lg text-muted-foreground leading-relaxed space-y-4">
+          <p>
+            We're committed to providing accurate, up-to-date information about KOHO's features, benefits, and promotional offers. Our team stays informed about the latest updates to ensure you always have access to the most current information.
+          </p>
+          <p>
+            Whether you're a student managing money for the first time, a professional looking to optimize your finances, or anyone in between—we're here to help you make the most of KOHO's innovative banking platform.
+          </p>
+        </div>
+      </div>
 
-  <!-- Features3 Widget ************** -->
+    </div>
+  </div>
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
+  <!-- CTA Section -->
+  <div class="bg-white dark:bg-transparent">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold tracking-tight mb-4 font-heading">Ready to Get Started?</h3>
+        <p class="text-lg text-muted-foreground mb-6">
+          Join thousands of Canadians who have already discovered a better way to bank. Use our verified referral code to unlock your bonus and start your KOHO journey today.
+        </p>
+        <Button
+          variant="primary"
+          href="https://referral.koho.ca/mzGV8zw"
+          target="_blank"
+          class="px-6 py-3 text-base"
+          showArrow
+        >
+          Get Your KOHO Bonus
+        </Button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
-</Layout>
+</PageLayout>

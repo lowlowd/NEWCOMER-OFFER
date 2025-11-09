@@ -1,30 +1,29 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Koho Referral Codes
+  site: 'https://astrowind.vercel.app' # We'll change this later
   base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
-# Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Koho Referral Codes
+    template: '%s — Koho Referral Codes' # I added the %s back in
+  description: "Mazimize your Koho Referral Codes Bonus."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Koho Referral Codes
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@arthelokyo' # You can change or delete this
+    site: '@arthelokyo' # You can change or delete this
     cardType: summary_large_image
 
 i18n:

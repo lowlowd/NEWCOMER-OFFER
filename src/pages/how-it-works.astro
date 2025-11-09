@@ -1,0 +1,133 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features from '~/components/widgets/Features.astro'; // For the Pro Tips
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: 'How to Get Your $20 KOHO Promo + $45 Bonus',
+  description: 'Follow our simple step-by-step guide to claim your referral bonus and start enjoying free banking with KOHO.',
+};
+---
+
+<PageLayout metadata={metadata}>
+  
+  <HeroText title={metadata.title}>
+    <Fragment slot="subtitle">
+      Follow our simple step-by-step guide to claim your referral bonus and start enjoying free banking with KOHO.
+    </Fragment>
+  </HeroText>
+
+  <Steps
+    animate={false}
+    title="How to Get Your Bonus"
+    subtitle="Follow these simple steps to claim your $20 + $45 KOHO signup bonus"
+    items={[
+      {
+        title: 'Download KOHO App',
+        description: 'Get the KOHO app from the App Store or Google Play. Available for iOS and Android devices.',
+        icon: 'tabler:download',
+      },
+      {
+        title: 'Enter Referral Code',
+        description: 'During signup, enter code C4MNILZARC when prompted. This ensures you get your $20 bonus.',
+        icon: 'tabler:writing-sign',
+      },
+      {
+        title: 'Fund Your Account',
+        description: 'Add money to your KOHO account within 30 days. Spend $20 to activate bonus.',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'Get Your $20 + $45 Bonus',
+        description: 'Your bonus will be credited automatically within 1-2 business days after funding.',
+        icon: 'tabler:gift',
+      },
+    ]}
+  >
+    <Fragment slot="footer">
+      <p class="text-center text-lg text-muted-foreground">
+        The entire process takes less than 10 minutes. <strong>No credit check required.</strong>
+      </p>
+    </Fragment>
+  </Steps>
+
+  <div class="bg-gray-50 dark:bg-slate-800">
+    <Steps
+      animate={false}
+      title="Detailed Setup Guide"
+    items={[
+      {
+        title: '1. Download the KOHO App',
+        description:
+          'Visit the App Store (iOS) or Google Play Store (Android) and search for "KOHO". Download and install the official KOHO app. The app is free and takes less than a minute to download.<br/><br/>Requires iOS 13.0+ or Android 6.0+.<br/>Free download with no in-app purchases required.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: '2. Create Your Account',
+        description:
+          'Open the app and tap "Sign Up". You\'ll need to provide some basic information:<br/>- Full legal name<br/>- Date of birth<br/>- Canadian address<br/>- Email address and phone number<br/>- Social Insurance Number (for identity verification)<br/><br/><strong>⚠️ Important: When prompted for a referral code, enter C4MNILZARC</strong>',
+        icon: 'tabler:user-plus',
+      },
+      {
+        title: '3. Verify Your Identity',
+        description:
+          'KOHO will need to verify your identity as required by Canadian banking regulations. This typically involves:<br/>- Taking a photo of a government-issued ID (driver\'s license or passport)<br/>- Taking a selfie for facial verification<br/>- Answering a few security questions<br/><br/>This process is secure, encrypted, and usually takes less than 5 minutes.',
+        icon: 'tabler:id',
+      },
+      {
+        title: '4. Fund Your Account',
+        description:
+          'To activate your $20 bonus, you need to spend at least $20 to your KOHO account within 30 days. You can fund your account through:<br/>- Direct Deposit: Set up direct deposit with your employer<br/>- Bank Transfer: Link your existing bank account and transfer funds<br/>- Interac e-Transfer: Send money from another bank via email',
+        icon: 'tabler:transfer-in',
+      },
+      {
+        title: '5. Receive Your Bonus',
+        description:
+          'Once you\'ve spent at least $20, your referral bonus will be automatically credited within 1-2 business days. You\'ll receive a notification in the app when your bonus is available. The $20 will appear in your account balance and can be used immediately for purchases or withdrawals.',
+        icon: 'tabler:confetti',
+      },
+    ]}
+  />
+  </div>
+
+  <Features
+    animate={false}
+    title="Pro Tips"
+    columns={2}
+    items={[
+      {
+        title: 'Do This',
+        description:
+          '• Enter the referral code during initial signup<br/>• Fund your account within the 30-day window<br/>• Keep your account in good standing<br/>• Take advantage of cash back on purchases',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Avoid This',
+        description:
+          "• Don't skip entering the referral code<br/>• Don't wait more than 30 days to fund<br/>• Don't close your account immediately<br/>• Don't share your login credentials",
+        icon: 'tabler:x',
+      },
+    ]}
+  />
+
+  <div class="bg-gray-50 dark:bg-slate-800">
+    <div class="max-w-3xl mx-auto px-4 py-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading">Ready to Get Your Bonus?</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Use the referral code below to get started.
+      </p>
+      <Button
+        variant="primary"
+        href="https://referral.koho.ca/mzGV8zw"
+        target="_blank"
+        class="px-8 py-4 text-lg md:px-10"
+        showArrow
+      >
+        Get Your Koho Bonus
+      </Button>
+    </div>
+  </div>
+
+</PageLayout>
