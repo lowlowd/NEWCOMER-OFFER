@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
+import FAQSchema from '~/components/blog/FAQSchema.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
@@ -14,81 +15,126 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+
+// Helper to simplify title for breadcrumbs
+const getSimplifiedTitle = (title: string, maxLength: number = 40) => {
+  if (title.length <= maxLength) return title;
+  return title.substring(0, maxLength - 3) + '...';
+};
+
+const categorySlug = post.category?.slug ? getPermalink(post.category.slug, 'category') : '#';
 ---
+
+<!-- FAQ Schema (if FAQs exist) -->
+{post.faqs && post.faqs.length > 0 && <FAQSchema faqs={post.faqs} />}
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
   <article>
-    <header
-      class={post.image
-        ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
-        : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
-    >
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
-        <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-          {
-            post.author && (
-              <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block">{post.author}</span>
-              </>
-            )
-          }
-          {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
-                </a>
-              </>
-            )
-          }
-          {
-            post.readingTime && (
-              <>
-                &nbsp;· <span>{post.readingTime}</span> min read
-              </>
-            )
-          }
-        </p>
-      </div>
+    <header class="max-w-3xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumbs at the very top -->
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex flex-wrap items-center">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center">
+            <a href="/" itemprop="item" class="hover:text-primary dark:hover:text-blue-400 transition-colors">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+            <span class="mx-2">/</span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center">
+            <a href="/blog" itemprop="item" class="hover:text-primary dark:hover:text-blue-400 transition-colors">
+              <span itemprop="name">Blog</span>
+            </a>
+            <meta itemprop="position" content="2" />
+            <span class="mx-2">/</span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            {post.category ? (
+              <a href={categorySlug} itemprop="item" class="hover:text-primary dark:hover:text-blue-400 transition-colors">
+                <span itemprop="name">{post.category.title}</span>
+              </a>
+            ) : (
+              <span itemprop="name" class="text-gray-700 dark:text-gray-300">{getSimplifiedTitle(post.title)}</span>
+            )}
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </nav>
 
-      <h1
-        class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
-      >
+      <!-- H1 Title - Large and Prominent -->
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4 text-gray-900 dark:text-gray-100">
         {post.title}
       </h1>
-      <p
-        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
-      >
+
+      <!-- Excerpt/Introduction Paragraph -->
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
         {post.excerpt}
       </p>
 
-      {
-        post.image ? (
-          <Image
-            src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
-            width={900}
-            height={506}
-            loading="eager"
-            decoding="async"
-            style="object-fit: contain;"
-          />
-        ) : (
-          <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="border-t dark:border-slate-700" />
-          </div>
-        )
-      }
+      <!-- Subtle Horizontal Separator -->
+      <hr class="border-t border-gray-200 dark:border-gray-700 my-6" />
+
+      <!-- Metadata Line with Icons -->
+      <div class="flex items-center flex-wrap text-sm text-gray-600 dark:text-gray-400 mb-8 gap-y-2">
+        <!-- Date -->
+        <div class="flex items-center">
+          <Icon name="tabler:clock" class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400" />
+          <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
+        </div>
+
+        {post.author && (
+          <>
+            <span class="mx-3 text-gray-400">|</span>
+            <!-- Author -->
+            <div class="flex items-center">
+              <Icon name="tabler:user" class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400" />
+              <span>{post.author}</span>
+            </div>
+          </>
+        )}
+
+        {post.category && (
+          <>
+            <span class="mx-3 text-gray-400">|</span>
+            <!-- Category -->
+            <div class="flex items-center">
+              <Icon name="tabler:bookmark" class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400" />
+              <a href={categorySlug} class="hover:text-primary dark:hover:text-blue-400 transition-colors">
+                {post.category.title}
+              </a>
+            </div>
+          </>
+        )}
+
+        {post.readingTime && (
+          <>
+            <span class="mx-3 text-gray-400">|</span>
+            <!-- Reading Time -->
+            <div class="flex items-center">
+              <Icon name="tabler:book" class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400" />
+              <span>{post.readingTime} min read</span>
+            </div>
+          </>
+        )}
+      </div>
+
     </header>
+
+    <!-- Featured Image (if exists) -->
+    {post.image && (
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-8 overflow-hidden">
+        <Image
+          src={post.image}
+          class="w-full h-auto rounded-lg shadow-md"
+          widths={[400, 900]}
+          sizes="(max-width: 900px) 400px, 900px"
+          alt={post?.title || 'Blog post image'}
+          width={900}
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    )}
     <div
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
     >

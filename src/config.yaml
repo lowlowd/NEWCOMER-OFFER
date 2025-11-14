@@ -1,6 +1,6 @@
 site:
   name: Koho Referral Codes
-  site: 'https://astrowind.vercel.app' # We'll change this later
+  site: 'https://kohoreferral.codes'
   base: '/'
   trailingSlash: false
 
@@ -10,7 +10,7 @@ metadata:
   title:
     default: Koho Referral Codes
     template: '%s — Koho Referral Codes' # I added the %s back in
-  description: "Mazimize your Koho Referral Codes Bonus."
+  description: "Get up to $65 in bonuses with our verified KOHO referral code C4MNILZARC. Maximize your KOHO sign up bonus with instant cashback and rewards. Join today!"
   robots:
     index: true
     follow: true
@@ -21,10 +21,6 @@ metadata:
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@arthelokyo' # You can change or delete this
-    site: '@arthelokyo' # You can change or delete this
-    cardType: summary_large_image
 
 i18n:
   language: en
@@ -65,7 +61,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: 'G-ELKHTJTMG1'
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

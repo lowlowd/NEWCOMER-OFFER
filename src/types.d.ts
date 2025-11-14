@@ -42,6 +42,9 @@ export interface Post {
 
   /**  */
   readingTime?: number;
+
+  /** FAQ schema data for rich snippets */
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 export interface Taxonomy {

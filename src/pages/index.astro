@@ -9,6 +9,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Features from '~/components/widgets/Features.astro';
 import Button from '~/components/ui/Button.astro';
+import FAQSchema from '~/components/common/FAQSchema.astro';
 
 // Import navigation data
 import { headerData, footerData } from '~/navigation';
@@ -16,14 +17,55 @@ import { headerData, footerData } from '~/navigation';
 // This is your new interactive button component
 import ClipboardCopyButton from '~/components/ui/ClipboardCopyButton.tsx';
 
+// FAQ data for schema
+const faqItems = [
+  {
+    title: 'When will I receive my $20 + $45 bonus?',
+    description: 'Your bonus will be credited to your account within 1-2 business days after you successfully spend from your KOHO account at least $20. Make sure to complete this within 30 days of signing up.',
+  },
+  {
+    title: 'Do I need to make a purchase to get the bonus?',
+    description: 'Yes, it can be anything. We recommend a gift card (like Amazon) of at least $20 within 30 days of signup, and the bonus will be automatically credited to your account.',
+  },
+  {
+    title: 'Can I use KOHO if I already have a bank account?',
+    description: 'Yes! KOHO works alongside your existing bank account. Many users keep both - using KOHO for daily spending to earn cash back while maintaining their traditional bank for other services.',
+  },
+  {
+    title: 'Are there any monthly fees?',
+    description: "KOHO offers a free tier with no monthly fees. There's also KOHO Extra and KOHO Everything plans with additional features for $4 and $9 per month respectively, but these are completely optional.",
+  },
+  {
+    title: 'Is KOHO safe and secure?',
+    description: 'Yes, KOHO is regulated by Canadian banking authorities. Your funds are held in a high-interest savings account with a federally regulated financial institution and are protected by CDIC insurance up to $100,000.',
+  },
+  {
+    title: 'What if I forget to enter the referral code?',
+    description: 'Unfortunately, referral codes must be entered during the initial signup process and cannot be applied retroactively. Make sure to enter code C4MNILZARC when creating your account.',
+  },
+  {
+    title: 'Can I refer my friends after signing up?',
+    description: "Absolutely! Once you're a KOHO user, you'll get your own referral code. When your friends sign up using your code, both you and your friend can earn bonuses.",
+  },
+  {
+    title: 'What can I use KOHO for?',
+    description: "KOHO can be used anywhere Visa is accepted - online, in stores, and for contactless payments. You'll also get instant cash back on purchases, automatic savings tools, and detailed spending insights.",
+  },
+  {
+    title: 'What is the KOHO promo code for 2025?',
+    description: 'The current KOHO promo code for 2025 is C4MNILZARC. This KOHO referral code gives you up to $65 in value bonuses when you sign up and make your first purchase.',
+  },
+];
+
 // You can edit your site metadata in src/config.yaml
 const metadata = {
-  title: 'Koho Referral Codes - Get Your $20 Sign-up Bonus',
+  title: 'Koho Referral Codes - Get up to $65 Sign-Up Bonus Value',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
+  <FAQSchema faqs={faqItems} />
   <Header {...headerData} isSticky />
 
   <Hero
@@ -31,8 +73,13 @@ const metadata = {
   >
     <Fragment slot="title">
       <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 font-heading dark:text-gray-200">
-        Click or copy the Koho referral code below when you sign up for Koho for a $65 Value Bonus
+        Use our KOHO Referral Code when you sign up for a $65 Value Bonus
       </h1>
+    </Fragment>
+    <Fragment slot="subtitle">
+      <p class="text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
+        Spend $20 in 30 days to unlock bonus!
+      </p>
     </Fragment>
   </Hero>
 
@@ -52,7 +99,7 @@ const metadata = {
             class="px-8 py-4 text-lg md:px-10"
             showArrow
           >
-            Get Your Koho Bonus
+            KOHO Referral Code
           </Button>
         </div>
         
@@ -62,22 +109,15 @@ const metadata = {
         
         <!-- Right: Copy Referral Code Button -->
         <div class="flex-shrink-0 w-full md:w-auto flex justify-center -mt-6 md:mt-0">
-          <ClipboardCopyButton client:load referralCode="C4MNILZARC" buttonText="Copy Referral Code" />
+          <ClipboardCopyButton client:load referralCode="C4MNILZARC" buttonText="Copy Koho Referral Code" />
         </div>
-      </div>
-      
-      <!-- Bottom instruction text -->
-      <div class="text-center -mt-2 md:mt-2">
-        <p class="text-base font-medium text-gray-700 dark:text-gray-300">
-          Either way works! Just be sure to enter the promo during signup.
-        </p>
       </div>
     </div>
   </WidgetWrapper>
 
   <Steps
     animate={false}
-    title="How It Works in 3 Easy Steps"
+    title="How to Use Your Koho Referral Code"
     classes={{
       headline: {
         container: 'text-center',
@@ -93,7 +133,7 @@ const metadata = {
       {
         title: 'Enter the Referral Code',
         description:
-          'Enter the code <span class="font-bold">C4MNILZARC</span> during sign-up.',
+          'Enter the KOHO referral code <span class="font-bold">C4MNILZARC</span> during sign-up to activate your bonus.',
         icon: 'tabler:writing-sign',
       },
       {
@@ -118,6 +158,31 @@ const metadata = {
         <p class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
           KOHO's mission is to help Canadians achieve financial wellness through transparent, accessible, and intelligent financial services. The platform provides instant cash back on purchases, automatic savings tools, and detailed spending insights to help users make better financial decisions.
         </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Banner Section -->
+  <div class="bg-gradient-to-r from-orange-500 to-orange-400 dark:from-orange-600 dark:to-orange-500">
+    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left text-white">
+          <div class="text-3xl md:text-4xl font-bold mb-3">Unlock Your Koho Bonus Today!</div>
+          <p class="text-lg md:text-xl opacity-95">
+            Sign up with our exclusive KOHO referral code or promo code to claim up to $65 value sign up bonus. Don't miss out on this KOHO promotion!
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <Button
+            variant="secondary"
+            href="https://referral.koho.ca/mzGV8zw"
+            target="_blank"
+            class="px-10 py-4 text-lg bg-white text-orange-600 hover:bg-gray-50 border-2 border-white shadow-lg"
+            showArrow
+          >
+            KOHO Referral Code
+          </Button>
+        </div>
       </div>
     </div>
   </div>
@@ -243,5 +308,25 @@ const metadata = {
     />
   </div>
 
-  <Footer {...footerData} />
+  <Footer {...footerData}>
+    <div slot="cta" class="col-span-12 mb-8">
+      <div class="bg-gradient-to-r from-orange-500 to-orange-400 rounded-lg p-8 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          Ready to Get Your Koho Bonus?
+        </h3>
+        <p class="text-white text-lg mb-6 opacity-95">
+          Get your KOHO promo code and unlock exclusive sign up bonuses. Use our verified KOHO referral code C4MNILZARC for instant rewards.
+        </p>
+        <Button
+          variant="secondary"
+          href="https://referral.koho.ca/mzGV8zw"
+          target="_blank"
+          class="px-10 py-4 text-lg bg-white text-orange-600 hover:bg-gray-50 border-2 border-white shadow-lg"
+          showArrow
+        >
+          KOHO Referral Code
+        </Button>
+      </div>
+    </div>
+  </Footer>
 </Layout>

@@ -24,7 +24,15 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
   ],
-  actions: [],
+  actions: [
+    {
+      variant: 'primary',
+      text: 'KOHO Referral Code',
+      href: 'https://referral.koho.ca/mzGV8zw',
+      target: '_blank',
+      showArrow: true,
+    },
+  ],
 };
 
 // This is for the Footer
@@ -56,7 +64,7 @@ export const footerData = {
   ],
   footNote: `
     <div class="text-sm text-gray-700 dark:text-gray-300 mb-3">
-      Get $20 + $45 bonus when you sign up for KOHO using referral code C4MNILZARC. Free banking, no fees, instant cash back, and smart budgeting tools.
+      Get $20 + $45 bonus when you sign up using our KOHO referral code C4MNILZARC. Free banking, no fees, instant cash back, and smart budgeting tools.
     </div>
     <div class="text-xs text-gray-600 dark:text-gray-400 mb-4">
       © 2025 KOHO Referral. This is an independent referral page, not affiliated with KOHO Financial Inc.

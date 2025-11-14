@@ -5,7 +5,7 @@ export interface Props {
   buttonText?: string;
 }
 
-export default function ClipboardCopyButton({ referralCode, buttonText = 'Copy Referral Code' }: Props) {
+export default function ClipboardCopyButton({ referralCode, buttonText = 'Copy Koho Referral Code' }: Props) {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
@@ -20,6 +20,13 @@ export default function ClipboardCopyButton({ referralCode, buttonText = 'Copy R
         console.error('Failed to copy text: ', err);
       }
     );
+  };
+
+  // Get current date formatted as "Month Day, Year"
+  const getCurrentDate = () => {
+    const now = new Date();
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    return now.toLocaleDateString('en-US', options);
   };
 
   const baseButtonClasses =
@@ -58,7 +65,7 @@ export default function ClipboardCopyButton({ referralCode, buttonText = 'Copy R
         </button>
         <p className="text-sm text-slate-500 leading-relaxed">
           Click to copy • Valid for new KOHO users only<br />
-          Code verified as of November 5, 2025
+          Code verified as of {getCurrentDate()}
         </p>
       </div>
     </div>
