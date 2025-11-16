@@ -69,6 +69,7 @@ export default defineConfig({
       config: './src/config.yaml',
     }),
     react(),
+    partytown(),
   ],
 
   image: {
