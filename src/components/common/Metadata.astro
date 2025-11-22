@@ -36,11 +36,17 @@ const seoProps: AstroSeoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: I18N?.language ? I18N.language.replace('-', '_') : 'en',
       type: 'website',
     },
     twitter: {
       cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+    },
+    extend: {
+      meta: [
+        { name: 'geo.region', content: 'CA' },
+        { name: 'geo.placename', content: 'Canada' },
+      ],
     },
   },
   {

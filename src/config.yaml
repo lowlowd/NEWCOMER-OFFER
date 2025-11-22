@@ -23,7 +23,7 @@ metadata:
     type: website
 
 i18n:
-  language: en
+  language: en-CA
   textDirection: ltr
 
 apps:
