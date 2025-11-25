@@ -1,0 +1,30 @@
+---
+const reviewSchema = {
+  '@context': 'https://schema.org/',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'FinancialProduct',
+    name: 'KOHO Prepaid Mastercard',
+    description: 'A no-fee prepaid Mastercard with cash back benefits and credit building tools.',
+    image: 'https://kohoreferral.codes/assets/images/koho-card.png',
+    brand: {
+      '@type': 'Brand',
+      name: 'KOHO Financial',
+    },
+  },
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: '5',
+    bestRating: '5',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Koho Referral Codes',
+    url: 'https://kohoreferral.codes',
+  },
+  reviewBody:
+    'KOHO offers 100% guaranteed approval with no credit check, zero NSF fees, and interest on spending money. The prepaid model prevents overspending, while the Cover feature provides up to $250 interest-free overdraft protection. An excellent choice for Canadians seeking modern, fee-free banking.',
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />

@@ -9,7 +9,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Features from '~/components/widgets/Features.astro';
 import Button from '~/components/ui/Button.astro';
 import FAQSchema from '~/components/common/FAQSchema.astro';
-import ProductSchema from '~/components/common/ProductSchema.astro';
+import ReviewSchema from '~/components/common/ReviewSchema.astro';
 
 // Import navigation data
 import { headerData, footerData } from '~/navigation';
@@ -71,14 +71,14 @@ const faqItems = [
 
 // You can edit your site metadata in src/config.yaml
 const metadata = {
-  title: 'Koho Referral Codes - Get up to $65 Sign-Up Bonus Value',
+  title: 'Koho Referral Codes - Get up to $65 Sign-Up Bonus',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <FAQSchema faqs={faqItems} />
-  <ProductSchema />
+  <ReviewSchema />
   <Header {...headerData} />
 
   <Hero>
