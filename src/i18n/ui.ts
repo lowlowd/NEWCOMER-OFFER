@@ -1,11 +1,11 @@
 /**
  * UI Translation Dictionary
- * Contains all user-facing strings for English and French
+ * Contains all user-facing strings for English and Punjabi
  */
 
 export const languages = {
   en: 'EN',
-  fr: 'FR',
+  pa: 'PA',
 } as const;
 
 export const defaultLang = 'en';
@@ -42,36 +42,36 @@ export const ui = {
     'common.lastUpdated': 'Last Updated',
     'common.shareOn': 'Share on',
   },
-  fr: {
+  pa: {
     // Navigation
-    'nav.home': 'Accueil',
-    'nav.about': 'À propos',
-    'nav.blog': 'Blogue',
-    'nav.howItWorks': 'Comment ça marche',
+    'nav.home': 'ਹੋਮ',
+    'nav.about': 'ਸਾਡੇ ਬਾਰੇ',
+    'nav.blog': 'ਬਲੌਗ',
+    'nav.howItWorks': 'ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ',
 
     // Footer
-    'footer.privacy': 'Politique de confidentialité',
-    'footer.terms': "Conditions d'utilisation",
-    'footer.about': 'À propos de nous',
-    'footer.contact': 'Contact',
+    'footer.privacy': 'ਗੋਪਨੀਯਤਾ ਨੀਤੀ',
+    'footer.terms': 'ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ',
+    'footer.about': 'ਸਾਡੇ ਬਾਰੇ',
+    'footer.contact': 'ਸੰਪਰਕ',
 
     // CTAs
-    'cta.getCode': 'Obtenir votre code',
-    'cta.signUp': "S'inscrire maintenant",
-    'cta.learnMore': 'En savoir plus',
-    'cta.readMore': 'Lire la suite',
+    'cta.getCode': 'ਆਪਣਾ ਕੋਡ ਪ੍ਰਾਪਤ ਕਰੋ',
+    'cta.signUp': 'ਹੁਣੇ ਸਾਈਨ ਅੱਪ ਕਰੋ',
+    'cta.learnMore': 'ਹੋਰ ਜਾਣੋ',
+    'cta.readMore': 'ਹੋਰ ਪੜ੍ਹੋ',
 
     // Blog
-    'blog.relatedPosts': 'Articles connexes',
-    'blog.postedOn': 'Publié le',
-    'blog.by': 'par',
-    'blog.minRead': 'min de lecture',
-    'blog.categories': 'Catégories',
-    'blog.tags': 'Étiquettes',
+    'blog.relatedPosts': 'ਸੰਬੰਧਿਤ ਲੇਖ',
+    'blog.postedOn': 'ਪੋਸਟ ਕੀਤਾ',
+    'blog.by': 'ਦੁਆਰਾ',
+    'blog.minRead': 'ਮਿੰਟ ਪੜ੍ਹੋ',
+    'blog.categories': 'ਸ਼੍ਰੇਣੀਆਂ',
+    'blog.tags': 'ਟੈਗ',
 
     // Common
-    'common.lastUpdated': 'Dernière mise à jour',
-    'common.shareOn': 'Partager sur',
+    'common.lastUpdated': 'ਆਖਰੀ ਅੱਪਡੇਟ',
+    'common.shareOn': 'ਸਾਂਝਾ ਕਰੋ',
   },
 } as const;
 
