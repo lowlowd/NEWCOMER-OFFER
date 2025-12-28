@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+﻿import { getPermalink, getBlogPermalink } from './utils/permalinks';
 import type { CallToAction } from './types';
 
 interface Link {
@@ -52,8 +52,8 @@ export const headerData: HeaderProps = {
   actions: [
     {
       variant: 'primary',
-      text: 'KOHO Referral Code',
-      href: 'https://referral.koho.ca/mzGV8zw',
+      text: 'Fizz Promo Code',
+      href: 'https://fizz.ca/en?ref=HN9SM',
       target: '_blank',
       showArrow: true,
     },
@@ -77,23 +77,23 @@ export const footerData = {
       links: [
         { text: 'Privacy Policy', href: getPermalink('/privacy') },
         { text: 'Terms of Service', href: getPermalink('/terms') },
-        { text: 'Official KOHO Site', href: 'https://www.koho.ca/', target: '_blank' },
+        { text: 'Official Fizz Site', href: 'https://fizz.ca/en?ref=HN9SM', target: '_blank' },
       ],
     },
   ],
   socialLinks: [],
   secondaryLinks: [
     {
-      text: "<strong>Disclaimer:</strong> This website is an independent referral page and is not officially affiliated with, endorsed by, or sponsored by KOHO Financial Inc. All product names, logos, and trademarks are property of their respective owners. Referral bonuses and terms are subject to change without notice and are governed by KOHO's official terms and conditions. Users must be Canadian residents, 18+ years old, and meet KOHO's eligibility requirements. Banking services provided by KOHO Financial Inc. are subject to regulatory compliance and approval.",
+      text: "<strong>Disclaimer:</strong> This website is an independent referral page and is not officially affiliated with, endorsed by, or sponsored by Fizz or Videotron. All product names, logos, and trademarks are property of their respective owners. Referral bonuses and terms are subject to change without notice and are governed by Fizz's official terms and conditions.",
       href: '#',
     },
   ],
   footNote: `
     <div class="text-sm text-gray-700 dark:text-gray-300 mb-3">
-      Get $20 + $45 bonus when you sign up using our KOHO referral code C4MNILZARC. Free banking, no fees, instant cash back, and smart budgeting tools.
+      Get $40 credit on your Fizz plan using our promo code. Affordable mobile and internet plans with no contracts.
     </div>
     <div class="text-xs text-gray-600 dark:text-gray-400 mb-4">
-      © 2025 KOHO Referral. This is an independent referral page, not affiliated with KOHO Financial Inc.
+       2025 Fizz Promo Code. This is an independent referral page, not affiliated with Fizz or Videotron.
     </div>
   `,
 };

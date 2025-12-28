@@ -1,43 +1,65 @@
----
+﻿---
 import PageLayout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Features from '~/components/widgets/Features.astro'; // For the Pro Tips
-import Button from '~/components/ui/Button.astro';
+import Features from '~/components/widgets/Features.astro';
+import HowToSchema from '~/components/common/HowToSchema.astro';
 
 const metadata = {
-  title: 'How to Get Your $65 Value KOHO Bonus',
-  description:
-    'Learn how to use our KOHO referral code C4MNILZARC to get up to $65 in bonuses. Step-by-step guide to claiming your sign-up bonus.',
+  title: 'How to Get Your $40 Fizz Discount',
+  description: 'Learn how to use our Fizz promo code to get $40 credit. Step-by-step guide to claiming your discount.',
 };
+
+// Steps data for HowTo schema
+const howToSteps = [
+  {
+    name: 'Sign Up for Fizz',
+    text: 'Visit Fizz.ca and sign up for Fizz online. Choose from mobile or internet plans. No contracts required.',
+  },
+  { name: 'Enter the Promo Code', text: 'Enter promo code HN9SM during checkout to activate your $40 credit.' },
+  {
+    name: 'Get Your Discount',
+    text: 'Your $40 credit is applied after two months. Keep your plan active to get the savings.',
+  },
+];
 ---
 
 <PageLayout metadata={metadata}>
+  <!-- HowTo Schema for rich snippets -->
+  <HowToSchema
+    name={metadata.title}
+    description={metadata.description}
+    steps={howToSteps}
+    totalTime="PT10M"
+    language="en-CA"
+  />
   <HeroText title={metadata.title}>
     <Fragment slot="subtitle">
-      Follow our simple step-by-step guide to claim your referral bonus and start enjoying free banking with KOHO.
+      Follow our simple step-by-step guide to claim your Fizz promo code discount and start saving on mobile and
+      internet.
     </Fragment>
   </HeroText>
 
   <Steps
-    title="How to Get Your Bonus"
-    subtitle="Follow these simple steps to claim your $65 Value KOHO signup bonus"
+    title="How to Get Your Discount"
+    subtitle="Follow these simple steps to claim your $40 Fizz promo code credit"
     items={[
       {
-        title: 'Sign Up for KOHO',
+        title: 'Sign Up for Fizz',
         description:
-          'Download the Koho app to create your account. <span class="font-bold">There is no credit check!</span>',
-        icon: 'tabler:download',
+          '<a href="https://fizz.ca/en?ref=HN9SM" target="_blank" rel="noopener noreferrer" class="underline hover:text-purple-600">Click here</a> and sign up for Fizz online. Choose from mobile or internet plans. <span class="font-bold">No contracts required!</span>',
+        icon: 'tabler:user-plus',
       },
       {
-        title: 'Enter the Referral Code',
+        title: 'Enter the Promo Code',
         description:
-          'Enter the KOHO referral code <span class="font-bold">C4MNILZARC</span> during sign-up to activate your bonus.',
+          'Enter promo code <span class="font-bold">HN9SM</span> during checkout to activate your <span class="font-bold">$40 credit</span>.',
         icon: 'tabler:writing-sign',
       },
       {
-        title: 'Get Your KOHO Bonus',
-        description: 'Make a $20 purchase with your Koho card to get your <span class="font-bold">Bonus.</span>',
+        title: 'Get Your Discount',
+        description:
+          'Your $40 credit is applied after two months. <span class="font-bold">Keep your plan active to get the savings!</span>',
         icon: 'tabler:gift',
       },
     ]}
@@ -54,33 +76,33 @@ const metadata = {
       title="Detailed Setup Guide"
       items={[
         {
-          title: '1. Download the KOHO App',
+          title: '1. Sign Up for Fizz',
           description:
-            'Visit the App Store (iOS) or Google Play Store (Android) and search for "KOHO". Download and install the official KOHO app. The app is free and takes less than a minute to download.<br/><br/>Requires iOS 13.0+ or Android 6.0+.<br/>Free download with no in-app purchases required.',
-          icon: 'tabler:device-mobile',
+            '<a href="https://fizz.ca/en?ref=HN9SM" target="_blank" rel="noopener noreferrer" class="underline hover:text-purple-600">Click here</a> to visit Fizz.ca and create your account. Choose from mobile or internet plans.<br/><br/>No app download required - sign up directly on their website.',
+          icon: 'tabler:user-plus',
         },
         {
           title: '2. Create Your Account',
           description:
-            'Open the app and tap "Sign Up". You\'ll need to provide some basic information:<br/>- Full legal name<br/>- Date of birth<br/>- Canadian address<br/>- Email address and phone number<br/>- Social Insurance Number (for identity verification)<br/><br/><strong>⚠️ Important: When prompted for a referral code, enter C4MNILZARC</strong>',
+            'Open the app and tap "Sign Up". You will need to provide:<br/>- Full legal name<br/>- Date of birth<br/>- Canadian address<br/>- Email address and phone number<br/>- Payment method (credit or debit card)',
           icon: 'tabler:user-plus',
         },
         {
-          title: '3. Verify Your Identity',
+          title: '3. Choose Your Plan',
           description:
-            "KOHO will need to verify your identity as required by Canadian banking regulations. This typically involves:<br/>- Taking a photo of a government-issued ID (driver's license or passport)<br/>- Taking a selfie for facial verification<br/>- Answering a few security questions<br/><br/>This process is secure, encrypted, and usually takes less than 5 minutes.",
-          icon: 'tabler:id',
+            'Select from Fizz mobile or internet plans. Customize your plan with the data, talk, and text options you need. Fizz plans are fully customizable with no minimum commitments.',
+          icon: 'tabler:list-check',
         },
         {
-          title: '4. Fund Your Account',
+          title: '4. Enter Promo Code',
           description:
-            'To activate your $20 bonus, you need to spend at least $20 to your KOHO account within 30 days. You can fund your account through:<br/>- Direct Deposit: Set up direct deposit with your employer<br/>- Bank Transfer: Link your existing bank account and transfer funds<br/>- Interac e-Transfer: Send money from another bank via email',
-          icon: 'tabler:transfer-in',
+            'During checkout, look for the promo code field. Enter code <strong>HN9SM</strong> to apply your $40 credit. The credit will be applied after two months.',
+          icon: 'tabler:ticket',
         },
         {
-          title: '5. Receive Your Bonus',
+          title: '5. Activate Your Service',
           description:
-            "Once you've spent at least $20, your referral bonus will be automatically credited within 1-2 business days. You'll receive a notification in the app when your bonus is available. The $20 will appear in your account balance and can be used immediately for purchases or withdrawals.",
+            'Complete your order and activate your service. If you chose eSIM, you can activate instantly. If you need a physical SIM, it will be mailed to you. Your $40 credit will be applied after two months!',
           icon: 'tabler:confetti',
         },
       ]}
@@ -94,13 +116,13 @@ const metadata = {
       {
         title: 'Do This',
         description:
-          '• Enter the referral code during initial signup<br/>• Fund your account within the 30-day window<br/>• Keep your account in good standing<br/>• Take advantage of cash back on purchases',
+          ' Enter the promo code during checkout<br/> Compare plans to find the best value<br/> Enable data rollover<br/> Check for loyalty perks as you stay longer',
         icon: 'tabler:check',
       },
       {
         title: 'Avoid This',
         description:
-          "• Don't skip entering the referral code<br/>• Don't wait more than 30 days to fund<br/>• Don't close your account immediately<br/>• Don't share your login credentials",
+          " Don't skip entering the promo code<br/> Don't overpay for data you won't use<br/> Don't forget to check coverage in your area<br/> Don't ignore the loyalty rewards system",
         icon: 'tabler:x',
       },
     ]}
@@ -108,17 +130,71 @@ const metadata = {
 
   <div class="bg-gray-50 dark:bg-slate-800">
     <div class="max-w-3xl mx-auto px-4 py-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading">Ready to Get Your Bonus?</h2>
-      <p class="text-lg text-muted-foreground mb-8">Use the referral code below to get started.</p>
-      <Button
-        variant="primary"
-        href="https://referral.koho.ca/mzGV8zw"
-        target="_blank"
-        class="px-8 py-4 text-lg md:px-10"
-        showArrow
-      >
-        Get Your Koho Bonus
-      </Button>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading text-purple-600 dark:text-purple-400">
+        Ready to Get Your Discount?
+      </h2>
+      <p class="text-lg text-muted-foreground mb-8">Use our promo code to get $40 credit on your Fizz plan.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <!-- Copy Code Button -->
+        <button
+          id="hiw-copy-btn"
+          type="button"
+          class="flex items-center justify-center gap-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 text-lg shadow-md transition-all duration-200"
+        >
+          <span id="hiw-copy-text">Copy Promo Code</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </button>
+        <!-- Visit Fizz Button -->
+        <a
+          href="https://fizz.ca/en?ref=HN9SM"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-3 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-4 px-8 text-lg shadow-md transition-all duration-200"
+        >
+          Visit Fizz.ca
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
+
+  <script>
+    document.getElementById('hiw-copy-btn')?.addEventListener('click', () => {
+      navigator.clipboard.writeText('HN9SM').then(() => {
+        const textEl = document.getElementById('hiw-copy-text');
+        if (textEl) {
+          const originalText = textEl.textContent;
+          textEl.textContent = 'Copied!';
+          setTimeout(() => {
+            textEl.textContent = originalText;
+          }, 2000);
+        }
+      });
+    });
+  </script>
 </PageLayout>

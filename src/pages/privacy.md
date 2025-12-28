@@ -1,57 +1,75 @@
+﻿---
+layout: ~/layouts/MarkdownLayout.astro
+title: Privacy Policy
 ---
-title: 'Privacy Policy'
-description: 'Privacy Policy for Koho Referral Codes. Learn how we protect your information when you use our KOHO referral code resources and guides.'
-layout: '~/layouts/MarkdownLayout.astro'
----
 
-_Last updated_: 11/7/2025
+**Last Updated: December 2025**
 
-## 1. Introduction
+## Introduction
 
-This Privacy Policy describes how we collect, use, and protect your personal information when you visit our website. We are committed to protecting your privacy and handling your data in an open and transparent manner.
+Fizz Promo Code ("we," "our," or "us") operates the website fizzpromocode.ca. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.
 
-## 2. Information We Collect
+## Information We Collect
 
-We may collect the following types of information:
+### Information You Provide
 
-- Contact information (name, email address) when you submit a contact form
-- Usage data (pages visited, time spent, browser type)
-- Cookie data for analytics purposes
+- Contact information when you use our contact form
+- Email address if you subscribe to updates
 
-## 3. How We Use Your Information
+### Automatically Collected Information
 
-We use the collected information for the following purposes:
+- Browser type and version
+- Pages visited and time spent
+- Referring website
+- IP address (anonymized)
 
-- To respond to your inquiries and provide customer support
-- To improve our website and user experience
-- To analyze website traffic and usage patterns
-- To comply with legal obligations
+## How We Use Your Information
 
-## 4. Data Security
+We use the information we collect to:
 
-We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+- Respond to your inquiries
+- Improve our website and content
+- Analyze website traffic and usage patterns
+- Send promotional communications (with your consent)
 
-## 5. Third-Party Services
+## Third-Party Services
 
-This website may contain links to third-party websites, including KOHO's official website. We are not responsible for the privacy practices of these external sites. We encourage you to read their privacy policies.
+We use the following third-party services:
 
-## 6. Your Rights
+- **Google Analytics** - For website analytics
+- **Vercel** - For website hosting
 
-Under Canadian privacy laws, you have the right to:
+These services may collect and process data according to their own privacy policies.
 
-- Access your personal information
-- Request correction of inaccurate data
+## Affiliate Disclosure
+
+This website contains affiliate links to Fizz. When you sign up using our promo code, we may receive a referral bonus. This does not affect the price you pay.
+
+## Cookies
+
+We use cookies to analyze website traffic and improve user experience. You can disable cookies in your browser settings.
+
+## Your Rights
+
+You have the right to:
+
+- Access your personal data
 - Request deletion of your data
-- Withdraw consent for data processing
+- Opt out of promotional communications
+- Request data portability
 
-## 7. Cookies
+## Data Security
 
-We use cookies to enhance your browsing experience and analyze website traffic. You can control cookie settings through your browser preferences.
+We implement appropriate security measures to protect your personal information. However, no internet transmission is completely secure.
 
-## 8. Changes to This Policy
+## Changes to This Policy
 
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page with an updated "Last updated" date.
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page.
 
-## 9. Contact Us
+## Contact Us
 
-If you have any questions about this Privacy Policy, please contact us through our contact page.
+If you have questions about this Privacy Policy, please contact us through our contact page.
+
+---
+
+_This website is not affiliated with Fizz or Videotron. Fizz is a trademark of Videotron Ltd._

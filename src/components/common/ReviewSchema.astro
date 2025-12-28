@@ -1,25 +1,23 @@
----
+﻿---
 const reviewSchema = {
   '@context': 'https://schema.org/',
   '@type': 'Review',
   itemReviewed: {
     '@type': 'Product',
-    name: 'KOHO Prepaid Mastercard',
-    description: 'A no-fee prepaid Mastercard with cash back benefits and credit building tools.',
-    image: 'https://kohoreferral.codes/assets/images/koho-card.png',
+    name: 'Fizz Mobile',
+    description: 'A no-contract mobile and internet provider with rollover data, loyalty perks, and flexible plans.',
+    image: 'https://fizzpromocode.ca/assets/images/fizz-logo.png',
     brand: {
       '@type': 'Brand',
-      name: 'KOHO Financial',
+      name: 'Fizz Communications',
     },
-    // --- ADD THIS SECTION ---
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'CAD',
       availability: 'https://schema.org/InStock',
-      url: 'https://kohoreferral.codes',
+      url: 'https://fizzpromocode.ca',
     },
-    // ------------------------
   },
   reviewRating: {
     '@type': 'Rating',
@@ -28,11 +26,11 @@ const reviewSchema = {
   },
   author: {
     '@type': 'Organization',
-    name: 'Koho Referral Codes',
-    url: 'https://kohoreferral.codes',
+    name: 'Fizz Promo Code',
+    url: 'https://fizzpromocode.ca',
   },
   reviewBody:
-    'KOHO offers 100% guaranteed approval with no credit check, zero NSF fees, and interest on spending money. The prepaid model prevents overspending, while the Cover feature provides up to $250 interest-free overdraft protection. An excellent choice for Canadians seeking modern, fee-free banking.',
+    'Fizz offers no-contract mobile and internet plans with unique features like rollover data, gift data, and loyalty perks. Powered by Videotron network with coverage in Quebec and Ontario. An excellent choice for Canadians seeking flexible, affordable wireless service.',
 };
 ---
 

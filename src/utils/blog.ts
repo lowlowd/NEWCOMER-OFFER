@@ -102,7 +102,11 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+
+  // Filter out French posts (those in the fr/ subdirectory) - they have their own blog
+  const englishPosts = posts.filter((post) => !post.id.startsWith('fr/'));
+
+  const normalizedPosts = englishPosts.map(async (post) => await getNormalizedPost(post));
 
   const now = new Date();
   const results = (await Promise.all(normalizedPosts))

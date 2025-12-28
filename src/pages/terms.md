@@ -1,56 +1,64 @@
+﻿---
+layout: ~/layouts/MarkdownLayout.astro
+title: Terms of Service
 ---
-title: 'Terms of Service'
-description: 'Terms of Service for Koho Referral Codes. Read our terms for using our website and accessing KOHO referral and promotion information.'
-layout: '~/layouts/MarkdownLayout.astro'
+
+**Last Updated: December 2025**
+
+## Agreement to Terms
+
+By accessing fizzpromocode.ca, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.
+
+## Use of Website
+
+You may use this website for lawful purposes only. You agree not to:
+
+- Use the site in any way that violates applicable laws
+- Attempt to gain unauthorized access to our systems
+- Interfere with the proper functioning of the website
+- Copy or reproduce content without permission
+
+## Promo Codes and Referrals
+
+### Disclaimer
+
+- Promo codes are provided "as is" and may change without notice
+- We do not guarantee that codes will always work or provide specific discounts
+- Fizz reserves the right to modify or cancel promotions at any time
+- Terms and conditions of Fizz promotions are governed by Fizz
+
+### Affiliate Relationship
+
+This website participates in the Fizz referral program. When you use our promo code to sign up, we may receive a referral bonus. This does not affect the discount you receive.
+
+## Intellectual Property
+
+All content on this website, including text, graphics, and logos, is our property or used with permission. You may not reproduce, distribute, or create derivative works without our consent.
+
+## Third-Party Links
+
+Our website may contain links to third-party websites. We are not responsible for the content or practices of these external sites.
+
+## Limitation of Liability
+
+To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website.
+
+## Indemnification
+
+You agree to indemnify and hold us harmless from any claims, damages, or expenses arising from your violation of these Terms or your use of the website.
+
+## Changes to Terms
+
+We reserve the right to modify these Terms at any time. Continued use of the website after changes constitutes acceptance of the new terms.
+
+## Governing Law
+
+These Terms are governed by the laws of Quebec, Canada.
+
+## Contact
+
+For questions about these Terms, please contact us through our contact page.
+
 ---
 
-_Last updated_: 11/7/2025
-
-## 1. Acceptance of Terms
-
-By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, please do not use this website.
-
-## 2. Website Purpose
-
-This website is an independent referral page created to provide information about KOHO's referral program. We are not officially affiliated with, endorsed by, or sponsored by KOHO Financial Inc.
-
-## 3. Referral Program
-
-The referral code and bonus information provided on this website are subject to:
-
-- KOHO's official terms and conditions
-- Change without notice at KOHO's discretion
-- Eligibility requirements as determined by KOHO
-- Canadian regulatory compliance
-
-## 4. Information Accuracy
-
-While we strive to provide accurate and up-to-date information, we make no warranties or representations about the completeness, accuracy, or reliability of the information on this website. For official information, please refer to KOHO's official website.
-
-## 5. No Financial Advice
-
-The content on this website is for informational purposes only and does not constitute financial advice. You should consult with a qualified financial advisor before making any financial decisions.
-
-## 6. Intellectual Property
-
-All trademarks, logos, and brand names mentioned on this website are the property of their respective owners. The use of these trademarks does not imply endorsement or affiliation.
-
-## 7. Limitation of Liability
-
-We shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of this website or reliance on the information provided.
-
-## 8. External Links
-
-This website contains links to external websites, including KOHO's official website. We are not responsible for the content, privacy practices, or terms of service of these external sites.
-
-## 9. Changes to Terms
-
-We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to this website. Your continued use of the website constitutes acceptance of the modified terms.
-
-## 10. Governing Law
-
-These terms shall be governed by and construed in accordance with the laws of Canada and the province in which the website operator is located.
-
-## 11. Contact Information
-
-If you have any questions about these Terms of Service, please contact us through our contact page.
+_This website is not affiliated with Fizz or Videotron. Fizz is a trademark of Videotron Ltd._

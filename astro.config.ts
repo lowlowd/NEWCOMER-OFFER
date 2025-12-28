@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 
-import sitemap from '@astrojs/sitemap';
+// import sitemap from '@astrojs/sitemap'; // Disabled - using custom sitemap generator
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
@@ -24,13 +24,31 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: 'https://fizzpromocode.ca',
   output: 'static',
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+    routing: {
+      prefixDefaultLocale: false, // English stays at root, French at /fr/
+    },
+  },
 
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    // Sitemap plugin disabled - using custom sitemap generator at src/pages/sitemap-0.xml.ts
+    // sitemap({
+    //   i18n: {
+    //     defaultLocale: 'en',
+    //     locales: {
+    //       en: 'en-CA',
+    //       fr: 'fr-CA',
+    //     },
+    //   },
+    // }),
     mdx(),
     icon({
       include: {

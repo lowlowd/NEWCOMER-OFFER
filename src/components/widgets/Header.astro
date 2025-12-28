@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
+import LanguagePicker from '~/components/common/LanguagePicker.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash } from '~/utils/permalinks';
@@ -51,17 +52,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <Logo />
       </a>
 
-      <div class="flex items-center lg:hidden">
+      <div class="flex items-center xl:hidden">
         <ToggleMenu />
       </div>
 
       <nav
         data-aw-nav
-        class="items-center w-full lg:w-auto hidden lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-default overflow-y-auto overflow-x-hidden lg:overflow-y-visible lg:overflow-x-auto"
+        class="items-center w-full xl:w-auto hidden xl:flex xl:absolute xl:left-1/2 xl:-translate-x-1/2 text-default overflow-y-auto overflow-x-hidden xl:overflow-y-visible xl:overflow-x-auto"
         aria-label="Main navigation"
       >
         <ul
-          class="flex flex-col lg:flex-row w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium"
+          class="flex flex-col xl:flex-row w-full xl:w-auto text-xl xl:text-[0.9375rem] tracking-[0.01rem] font-medium"
         >
           {
             links.map(({ text, href, links }) => (
@@ -75,15 +76,15 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       {text}{' '}
                       <Icon
                         name="tabler:chevron-down"
-                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden xl:inline"
                       />
                     </button>
-                    <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-dark rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
+                    <ul class="dropdown-menu xl:backdrop-blur-md dark:xl:bg-dark rounded xl:absolute pl-4 xl:pl-0 xl:hidden font-medium xl:bg-white/90 xl:min-w-[200px] drop-shadow-xl">
                       {links.map(({ text: text2, href: href2 }) => (
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                              'first:rounded-t last:rounded-b xl:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
                               { 'aw-link-active': href2 === currentPath },
                             ]}
                             href={href2}
@@ -113,12 +114,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
       {
         actions?.length ? (
-          <div class="hidden lg:flex items-center" data-aw-header-actions>
+          <div class="hidden xl:flex items-center gap-4" data-aw-header-actions>
             {actions.map((btnProps) => (
               <Button {...btnProps} class="py-2.5 px-6 font-semibold shadow-lg text-sm" />
             ))}
+            <LanguagePicker />
           </div>
-        ) : null
+        ) : (
+          <div class="hidden xl:flex items-center" data-aw-header-actions>
+            <LanguagePicker />
+          </div>
+        )
       }
     </div>
   </div>

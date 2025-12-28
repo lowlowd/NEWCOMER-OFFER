@@ -1,4 +1,4 @@
----
+﻿---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog';
 
@@ -20,8 +20,8 @@ const { page, tag } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Posts by tag '${tag.title}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
-  description: `Browse all articles tagged with ${tag.title.toLowerCase()}. Find KOHO guides, comparisons, and tips related to ${tag.title.toLowerCase()}.`,
+  title: `Posts by tag '${tag.title}'${currentPage > 1 ? `  Page ${currentPage} ` : ''}`,
+  description: `Browse all articles tagged with ${tag.title.toLowerCase()}. Find Fizz guides, comparisons, and tips related to ${tag.title.toLowerCase()}.`,
   robots: {
     index: blogTagRobots?.index,
     follow: blogTagRobots?.follow,
