@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { fetchPosts } from '~/utils/blog';
-import { fetchFrenchPosts } from '~/utils/blog-fr';
+import { fetchFrenchPosts } from '~/utils/blog-pa';
 import { CATEGORY_TRANSLATIONS, TAG_TRANSLATIONS } from '~/utils/category-tag-translations';
 
 const SITE_URL = 'https://fizzpromocode.ca';

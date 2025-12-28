@@ -2,12 +2,12 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
-import BlogListFr from '~/components/blog/ListFr.astro';
+import BlogListFr from '~/components/blog/ListPa.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
-import { headerDataFr, footerDataFr } from '~/navigation-fr';
-import { fetchFrenchPosts, blogPostsPerPage } from '~/utils/blog-fr';
+import { headerDataFr, footerDataFr } from '~/navigation-pa';
+import { fetchFrenchPosts, blogPostsPerPage } from '~/utils/blog-pa';
 
 export const prerender = true;
 
